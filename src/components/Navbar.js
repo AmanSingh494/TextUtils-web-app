@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export default function Navbar(props) {
   return (
     <nav
-      className='navbar navbar-expand-lg bg-body-tertiary rounded'
+      className='navbar navbar-expand-lg navbar-dark bg-dark rounded'
       aria-label='Eleventh navbar example'
     >
       <div className='container-fluid'>

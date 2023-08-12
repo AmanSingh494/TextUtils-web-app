@@ -44,6 +44,15 @@ export default function TextForm(props) {
     setRanColor(`white`)
     setColor(`black`)
   }
+  const copyClick = () => {
+    navigator.clipboard.writeText(text)
+  }
+  const reExSpaClick = () => {
+    let newText = text.split(/[ ]+/)
+    console.log(newText)
+    setText(newText.join(' '))
+  }
+
   const numWords = text.split(' ').length
   return (
     <>
@@ -90,6 +99,12 @@ export default function TextForm(props) {
         </button>
         <button className='btn btn-primary my-4 mx-2' onClick={resetClick}>
           Reset
+        </button>
+        <button className='btn btn-primary my-4 mx-2' onClick={copyClick}>
+          Copy
+        </button>
+        <button className='btn btn-primary my-4 mx-2' onClick={reExSpaClick}>
+          Remove Extra spaces
         </button>
       </div>
       <div className='container'>

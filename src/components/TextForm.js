@@ -3,37 +3,28 @@ import React, { useState } from 'react'
 export default function TextForm(props) {
   // states
   const [text, setText] = useState('')
-  const [randomColor, setColor] = useState('black')
-  const [bacRandomColor, setRanColor] = useState('white')
   const [weight, setWeight] = useState('normal')
   const [style, setStyle] = useState('normal')
 
   const upClick = () => {
     setText(text.toUpperCase())
+    props.showAlert('Converted to Uppercase', 'success')
   }
   const lowClick = () => {
     setText(text.toLowerCase())
+    props.showAlert('Converted to Lowercase', 'success')
   }
   const clearClick = () => {
     setText('')
-  }
-  const colClick = () => {
-    const r = Math.floor(Math.random() * 256)
-    const g = Math.floor(Math.random() * 256)
-    const b = Math.floor(Math.random() * 256)
-    setColor(`rgb(${r},${g},${b})`)
-  }
-  const bacColClick = () => {
-    const r = Math.floor(Math.random() * 256)
-    const g = Math.floor(Math.random() * 256)
-    const b = Math.floor(Math.random() * 256)
-    setRanColor(`rgb(${r},${g},${b})`)
+    props.showAlert('Cleared text', 'success')
   }
   const boldClick = () => {
     setWeight('bold')
+    props.showAlert('Made bold', 'success')
   }
   const itaClick = () => {
     setStyle(`italic`)
+    props.showAlert('Made Italic', 'success')
   }
   const onChange = (e) => {
     setText(e.target.value)
@@ -41,22 +32,26 @@ export default function TextForm(props) {
   const resetClick = () => {
     setWeight('normal')
     setStyle(`normal`)
-    setRanColor(`white`)
-    setColor(`black`)
+    props.showAlert('Reset', 'success')
   }
   const copyClick = () => {
     navigator.clipboard.writeText(text)
+    props.showAlert('Copied text', 'success')
   }
   const reExSpaClick = () => {
     let newText = text.split(/[ ]+/)
-    console.log(newText)
     setText(newText.join(' '))
+    props.showAlert('Eliminated extra spaces', 'success')
   }
 
   const numWords = text.split(' ').length
   return (
     <>
-      <div className='container my-5'>
+      <div
+        className={`container my-5 text-${
+          props.mode === 'light' ? 'dark' : 'light'
+        }`}
+      >
         <h1>{props.heading}</h1>
         <div className='form-floating'>
           <textarea
@@ -69,10 +64,13 @@ export default function TextForm(props) {
             spellCheck='false'
             style={{
               height: '100%',
-              color: randomColor,
-              backgroundColor: bacRandomColor,
+              color: `${props.mode === 'light' ? 'black' : 'white'}`,
+              backgroundColor: `${
+                props.mode === 'light' ? 'white' : 'rgb(45, 74, 103)'
+              }`,
               fontWeight: weight,
-              fontStyle: style
+              fontStyle: style,
+              letterSpacing: '0.04rem'
             }}
           ></textarea>
         </div>
@@ -84,12 +82,6 @@ export default function TextForm(props) {
         </button>
         <button className='btn btn-danger my-4 mx-2' onClick={clearClick}>
           Clear text
-        </button>
-        <button className='btn btn-info my-4 mx-2' onClick={colClick}>
-          Change Color
-        </button>
-        <button className='btn btn-success my-4 mx-2' onClick={bacColClick}>
-          Change Background Color
         </button>
         <button className='btn btn-primary my-4 mx-2' onClick={boldClick}>
           Bold
@@ -107,7 +99,11 @@ export default function TextForm(props) {
           Remove Extra spaces
         </button>
       </div>
-      <div className='container'>
+      <div
+        className={`container text-${
+          props.mode === 'light' ? 'dark' : 'light'
+        }`}
+      >
         <h1>Your text summary</h1>
         <p>
           {numWords} words and {text.length} characters{' '}

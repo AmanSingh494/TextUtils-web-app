@@ -47,19 +47,15 @@ export default function TextForm(props) {
   const numWords = text.split(' ').length
   return (
     <>
-      <div
-        className={`container my-5 text-${
-          props.mode === 'light' ? 'dark' : 'light'
-        }`}
-      >
+      <div className={`container text-form-cont my-5`}>
         <h1>{props.heading}</h1>
         <div className='form-floating'>
           <textarea
             onChange={onChange}
             value={text}
             rows='12'
-            className='form-control'
-            id='floatingTextarea'
+            className={`form-control ${props.addClass}`}
+            id='textarea'
             placeholder='Enter your text here'
             spellCheck='false'
             style={{
@@ -99,11 +95,7 @@ export default function TextForm(props) {
           Remove Extra spaces
         </button>
       </div>
-      <div
-        className={`container text-${
-          props.mode === 'light' ? 'dark' : 'light'
-        }`}
-      >
+      <div className={`container `}>
         <h1>Your text summary</h1>
         <p>
           {numWords} words and {text.length} characters{' '}

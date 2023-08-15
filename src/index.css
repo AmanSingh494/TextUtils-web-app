@@ -13,8 +13,80 @@ code {
 }
 .fixed-nav{
   position: fixed;
-  top: 0;
+  top: -100px;
   width: 100vw;
   z-index: 1;
-  opacity: 80%;
+  transform: translateY(100px);
+  transition: all 0.3s linear;
+}
+.theme-bar{
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  width: 15vw;
+  background-color: rgb(227, 227, 227);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5%;
+  transition: all 1s ease;
+  transform: translateX(200px);
+}
+.side-bar{
+  transform: translateX(0);
+
+}
+.theme-bar ul{
+  display: flex;
+  flex-direction: column;
+  line-height: 4rem;
+  padding: 0;
+}
+.theme-bar ul li{
+  font-size: 1.1rem;
+  list-style: none;
+}
+.theme-bar ul li .icon{
+  margin: 5px;
+}
+.orange{
+  background-color: #1b1919 !important;
+  color: #cf8600 !important;
+}
+.blue{
+  background-color: #0b1c57 !important;
+  color:#9494ff !important;
+}
+.purple{
+  background-color: #2d2b55 !important;
+  color: #a095e3 !important;
+}
+.dark{
+  background-color: #1b1919 !important;
+  color: #777785 !important;
+}
+.light{
+  color: black !important;
+  background-color: white !important;
+}
+.navbar-light{
+  color: black !important;
+  background-color: white !important;
+}
+.navbar-orange{
+  color: #cf8600 !important;
+  background-color: #333333 !important;
+}
+.navbar-dark{
+  color: #777785 !important;
+  background-color: #333333 !important;
+}
+.navbar-purple{
+  color: #a095e3 !important;
+  background-color:  #1e1e3f !important;
+}
+.navbar-blue{
+  color: #9494ff !important;
+  background-color: #010e3b !important;
 }

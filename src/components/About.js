@@ -1,31 +1,18 @@
 import React from 'react'
 const About = (props) => {
   return (
-    <div className='container'>
-      <h1
-        className='my-4'
-        style={{
-          color: `${props.mode === 'light' ? 'black' : 'white'}`
-        }}
-      >
-        About Us
-      </h1>
+    <div className='container about-cont'>
+      <h1 className='my-4'>About Us</h1>
       <div className='accordion' id='accordionPanelsStayOpenExample'>
         <div className='accordion-item'>
           <h2 className='accordion-header' id='panelsStayOpen-headingOne'>
             <button
-              className='accordion-button'
+              className={`accordion-button ${props.addClass}`}
               type='button'
               data-bs-toggle='collapse'
               data-bs-target='#panelsStayOpen-collapseOne'
               aria-expanded='true'
               aria-controls='panelsStayOpen-collapseOne'
-              style={{
-                color: `${props.mode === 'light' ? 'black' : 'white'}`,
-                backgroundColor: `${
-                  props.mode === 'light' ? 'white' : 'rgb(45, 74, 103)'
-                }`
-              }}
             >
               Modify your text
             </button>
@@ -35,15 +22,7 @@ const About = (props) => {
             className='accordion-collapse collapse show'
             aria-labelledby='panelsStayOpen-headingOne'
           >
-            <div
-              className='accordion-body'
-              style={{
-                color: `${props.mode === 'light' ? 'black' : 'white'}`,
-                backgroundColor: `${
-                  props.mode === 'light' ? 'white' : 'rgb(45, 74, 103)'
-                }`
-              }}
-            >
+            <div className={`accordion-body ${props.addClass}`}>
               <strong>This is the first item's accordion body.</strong> It is
               shown by default, until the collapse plugin adds the appropriate
               classes that we use to style each element. These classes control
@@ -58,18 +37,12 @@ const About = (props) => {
         <div className='accordion-item'>
           <h2 className='accordion-header' id='panelsStayOpen-headingTwo'>
             <button
-              className='accordion-button collapsed'
+              className={`accordion-button ${props.addClass} collapsed`}
               type='button'
               data-bs-toggle='collapse'
               data-bs-target='#panelsStayOpen-collapseTwo'
               aria-expanded='false'
               aria-controls='panelsStayOpen-collapseTwo'
-              style={{
-                color: `${props.mode === 'light' ? 'black' : 'white'}`,
-                backgroundColor: `${
-                  props.mode === 'light' ? 'white' : 'rgb(45, 74, 103)'
-                }`
-              }}
             >
               Copy it
             </button>
@@ -79,15 +52,7 @@ const About = (props) => {
             className='accordion-collapse collapse'
             aria-labelledby='panelsStayOpen-headingTwo'
           >
-            <div
-              className='accordion-body'
-              style={{
-                color: `${props.mode === 'light' ? 'black' : 'white'}`,
-                backgroundColor: `${
-                  props.mode === 'light' ? 'white' : 'rgb(45, 74, 103)'
-                }`
-              }}
-            >
+            <div className={`accordion-body ${props.addClass}`}>
               <strong>This is the second item's accordion body.</strong> It is
               hidden by default, until the collapse plugin adds the appropriate
               classes that we use to style each element. These classes control
@@ -102,18 +67,12 @@ const About = (props) => {
         <div className='accordion-item'>
           <h2 className='accordion-header' id='panelsStayOpen-headingThree'>
             <button
-              className='accordion-button collapsed'
+              className={`accordion-button ${props.addClass} collapsed`}
               type='button'
               data-bs-toggle='collapse'
               data-bs-target='#panelsStayOpen-collapseThree'
               aria-expanded='false'
               aria-controls='panelsStayOpen-collapseThree'
-              style={{
-                color: `${props.mode === 'light' ? 'black' : 'white'}`,
-                backgroundColor: `${
-                  props.mode === 'light' ? 'white' : 'rgb(45, 74, 103)'
-                }`
-              }}
             >
               Use it
             </button>
@@ -123,15 +82,7 @@ const About = (props) => {
             className='accordion-collapse collapse'
             aria-labelledby='panelsStayOpen-headingThree'
           >
-            <div
-              className='accordion-body'
-              style={{
-                color: `${props.mode === 'light' ? 'black' : 'white'}`,
-                backgroundColor: `${
-                  props.mode === 'light' ? 'white' : 'rgb(45, 74, 103)'
-                }`
-              }}
-            >
+            <div className={`accordion-body ${props.addClass}`}>
               <strong>This is the third item's accordion body.</strong> It is
               hidden by default, until the collapse plugin adds the appropriate
               classes that we use to style each element. These classes control

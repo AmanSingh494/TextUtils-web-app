@@ -44,7 +44,16 @@ export default function TextForm(props) {
     props.showAlert('Eliminated extra spaces', 'success')
   }
 
-  const numWords = text.split(' ').length
+  const numWordsArr = text.split(' ').filter((items) => {
+    return items !== ''
+  })
+  const numWords = numWordsArr.length
+  const numChar = text
+    .split(' ')
+    .filter((items) => {
+      return items !== ''
+    })
+    .join('').length
   return (
     <>
       <div
@@ -106,7 +115,7 @@ export default function TextForm(props) {
       >
         <h1>Your text summary</h1>
         <p>
-          {numWords} words and {text.length} characters{' '}
+          {numWords} words and {numChar} characters{' '}
         </p>
         <p>{0.004 * numWords} minutes read</p>
         <h2>Preview</h2>

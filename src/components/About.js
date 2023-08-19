@@ -27,7 +27,7 @@ const About = (props) => {
                 }`
               }}
             >
-              Accordion Item #1
+              Modify your text
             </button>
           </h2>
           <div
@@ -71,7 +71,7 @@ const About = (props) => {
                 }`
               }}
             >
-              Accordion Item #2
+              Copy it
             </button>
           </h2>
           <div
@@ -115,7 +115,7 @@ const About = (props) => {
                 }`
               }}
             >
-              Accordion Item #3
+              Use it
             </button>
           </h2>
           <div
